@@ -9,12 +9,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 interface AppHeaderProps {
   sidebarCollapsed: boolean;
+  onToggle?: () => void;
 }
 
-export function AppHeader({ sidebarCollapsed }: AppHeaderProps) {
+export function AppHeader({ sidebarCollapsed, onToggle }: AppHeaderProps) {
   return (
     <header
       className={cn(
@@ -71,6 +73,3 @@ export function AppHeader({ sidebarCollapsed }: AppHeaderProps) {
     </header>
   );
 }
-
-// Don't forget to import cn
-import { cn } from "@/lib/utils";

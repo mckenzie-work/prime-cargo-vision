@@ -43,7 +43,7 @@ export function AppLayout({ children }: AppLayoutProps) {
       
       <main
         className={cn(
-          "pt-16 transition-all duration-300",
+          "pt-16 min-h-screen transition-all duration-300",
           isMobile 
             ? "ml-0" 
             : sidebarCollapsed 

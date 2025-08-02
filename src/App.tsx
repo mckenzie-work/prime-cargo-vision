@@ -7,6 +7,7 @@ import { AppLayout } from "@/components/layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import Clients from "./pages/Clients";
 import SeaCargo from "./pages/SeaCargo";
+import Claims from "./pages/Claims";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,14 @@ const App = () => (
             element={
               <AppLayout>
                 <SeaCargo />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/cargos/claims"
+            element={
+              <AppLayout>
+                <Claims />
               </AppLayout>
             }
           />

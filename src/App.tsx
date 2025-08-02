@@ -10,6 +10,7 @@ import Clients from "./pages/Clients";
 import SeaCargo from "./pages/SeaCargo";
 import Claims from "./pages/Claims";
 import Admins from "./pages/Admins";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -58,6 +59,14 @@ const App = () => (
             element={
               <AppLayout>
                 <Admins />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <AppLayout>
+                <Settings />
               </AppLayout>
             }
           />

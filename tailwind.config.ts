@@ -29,6 +29,10 @@ export default {
 				'sidebar': 'var(--sidebar-width)',
 				'sidebar-collapsed': 'var(--sidebar-collapsed-width)',
 			},
+			margin: {
+				'sidebar': 'var(--sidebar-width)',
+				'sidebar-collapsed': 'var(--sidebar-collapsed-width)',
+			},
 			boxShadow: {
 				'premium-sm': 'var(--shadow-sm)',
 				'premium': 'var(--shadow)',

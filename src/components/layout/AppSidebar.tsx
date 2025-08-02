@@ -31,7 +31,6 @@ const navigation = [
     children: [
       { name: "Sea Cargo", href: "/cargos/sea", icon: Ship },
       { name: "Air Cargo", href: "/cargos/air", icon: Plane },
-      { name: "Claims", href: "/cargos/claims", icon: AlertTriangle },
     ],
   },
   {
@@ -41,6 +40,7 @@ const navigation = [
       { name: "Ghana", href: "/goods/ghana", icon: MapPin },
     ],
   },
+  { name: "Package Claims", href: "/claims", icon: AlertTriangle },
   { name: "Rates", href: "/rates", icon: Calculator },
   { name: "Admins", href: "/my-admins", icon: UserCog },
   { name: "Settings", href: "/settings", icon: Settings },

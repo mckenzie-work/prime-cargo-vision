@@ -8,6 +8,9 @@ import { AppLayout } from "@/components/layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import Clients from "./pages/Clients";
 import SeaCargo from "./pages/SeaCargo";
+import AirCargo from "./pages/AirCargo";
+import ChinaWarehouse from "./pages/ChinaWarehouse";
+import GhanaWarehouse from "./pages/GhanaWarehouse";
 import Claims from "./pages/Claims";
 import Admins from "./pages/Admins";
 import Settings from "./pages/Settings";
@@ -44,6 +47,30 @@ const App = () => (
             element={
               <AppLayout>
                 <SeaCargo />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/cargos/air"
+            element={
+              <AppLayout>
+                <AirCargo />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/goods-received/china"
+            element={
+              <AppLayout>
+                <ChinaWarehouse />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/goods-received/ghana"
+            element={
+              <AppLayout>
+                <GhanaWarehouse />
               </AppLayout>
             }
           />

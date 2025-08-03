@@ -11,6 +11,7 @@ import SeaCargo from "./pages/SeaCargo";
 import Claims from "./pages/Claims";
 import Admins from "./pages/Admins";
 import Settings from "./pages/Settings";
+import ShippingRates from "./pages/ShippingRates";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -67,6 +68,14 @@ const App = () => (
             element={
               <AppLayout>
                 <Settings />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/rates"
+            element={
+              <AppLayout>
+                <ShippingRates />
               </AppLayout>
             }
           />

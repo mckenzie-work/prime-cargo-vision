@@ -16,15 +16,35 @@ export default function ChinaWarehouse() {
           <p className="text-muted-foreground">Manage goods available in China warehouses</p>
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" onClick={() => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.xlsx,.xls,.csv';
+            input.onchange = (e) => {
+              const file = (e.target as HTMLInputElement).files?.[0];
+              if (file) {
+                console.log('Uploading China warehouse file:', file.name);
+              }
+            };
+            input.click();
+          }}>
             <Upload className="h-4 w-4" />
             Import Excel
           </Button>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" onClick={() => {
+            const csvContent = "Product,SKU,Category,Quantity,Status\nSample Product,SKU001,Electronics,100,Available";
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'china-warehouse-data.csv';
+            a.click();
+            window.URL.revokeObjectURL(url);
+          }}>
             <Download className="h-4 w-4" />
             Export Data
           </Button>
-          <Button size="sm">
+          <Button size="sm" onClick={() => window.location.href = '/goods/china/new'}>
             <Plus className="h-4 w-4" />
             Add Goods
           </Button>

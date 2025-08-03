@@ -54,7 +54,7 @@ export function PersonnelSection() {
             </CardTitle>
             <CardDescription>View and manage all personnel members and their associated details.</CardDescription>
           </div>
-          <Button className="bg-primary hover:bg-primary/90">
+          <Button className="bg-primary hover:bg-primary/90" onClick={() => window.location.href = '/my-admins/new'}>
             <Plus className="h-4 w-4 mr-2" />
             Add Personnel
           </Button>

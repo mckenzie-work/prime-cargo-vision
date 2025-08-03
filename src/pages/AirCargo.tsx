@@ -19,11 +19,23 @@ export default function AirCargo() {
           <p className="text-muted-foreground">Track and manage all cargo shipments</p>
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" onClick={() => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.xlsx,.xls,.csv';
+            input.onchange = (e) => {
+              const file = (e.target as HTMLInputElement).files?.[0];
+              if (file) {
+                // Handle file upload
+                console.log('Uploading file:', file.name);
+              }
+            };
+            input.click();
+          }}>
             <Upload className="h-4 w-4" />
             Import Excel
           </Button>
-          <Button size="sm">
+          <Button size="sm" onClick={() => window.location.href = '/cargos/air/new'}>
             <Plus className="h-4 w-4" />
             Quick Create
           </Button>
@@ -32,7 +44,7 @@ export default function AirCargo() {
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
         <TabsList className="bg-muted">
-          <TabsTrigger value="sea-cargos" className="flex items-center gap-2">
+          <TabsTrigger value="sea-cargos" className="flex items-center gap-2" onClick={() => window.location.href = '/cargos/sea'}>
             <Ship className="h-4 w-4" />
             Sea Cargos
           </TabsTrigger>

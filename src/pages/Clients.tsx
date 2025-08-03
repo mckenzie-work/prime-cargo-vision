@@ -82,7 +82,7 @@ export default function Clients() {
             Manage your client relationships and view shipping history
           </p>
         </div>
-        <Button>
+        <Button onClick={() => window.location.href = '/clients/new'}>
           <Plus className="h-4 w-4 mr-2" />
           Add Client
         </Button>

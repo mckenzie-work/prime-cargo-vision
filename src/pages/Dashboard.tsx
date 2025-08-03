@@ -11,6 +11,7 @@ import {
 import { MetricCard } from "@/components/ui/metric-card";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const transitingCargo = [
   {
@@ -65,10 +66,12 @@ export default function Dashboard() {
             <Calendar className="h-4 w-4 mr-2" />
             Last 30 days
           </Button>
-          <Button size="sm">
-            <Package className="h-4 w-4 mr-2" />
-            New Shipment
-          </Button>
+          <Link to="/cargos/sea">
+            <Button size="sm">
+              <Package className="h-4 w-4 mr-2" />
+              New Shipment
+            </Button>
+          </Link>
         </div>
       </div>
 
@@ -108,7 +111,9 @@ export default function Dashboard() {
             <div className="p-6 border-b border-border">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold">Cargo in Transit</h3>
-                <Button variant="ghost" size="sm">View All</Button>
+                <Link to="/cargos/sea">
+                  <Button variant="ghost" size="sm">View All</Button>
+                </Link>
               </div>
             </div>
             <div className="overflow-x-auto">
@@ -182,7 +187,7 @@ export default function Dashboard() {
 
       {/* Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="logistics-card p-6">
+        <Link to="/cargos/sea" className="logistics-card p-6 hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-muted-foreground">Sea Cargo</p>
@@ -194,9 +199,9 @@ export default function Dashboard() {
             <TrendingUp className="h-4 w-4 mr-1" />
             +2 this week
           </div>
-        </div>
+        </Link>
 
-        <div className="logistics-card p-6">
+        <Link to="/cargos/air" className="logistics-card p-6 hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-muted-foreground">Air Cargo</p>
@@ -208,9 +213,9 @@ export default function Dashboard() {
             <TrendingUp className="h-4 w-4 mr-1" />
             +1 this week
           </div>
-        </div>
+        </Link>
 
-        <div className="logistics-card p-6">
+        <Link to="/cargos/claims" className="logistics-card p-6 hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-muted-foreground">Open Claims</p>
@@ -221,7 +226,7 @@ export default function Dashboard() {
           <div className="mt-3 text-sm text-muted-foreground">
             Avg. resolution: 3 days
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

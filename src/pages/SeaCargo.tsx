@@ -92,7 +92,7 @@ export default function SeaCargo() {
             Track and manage all sea freight shipments
           </p>
         </div>
-        <Button>
+        <Button onClick={() => window.location.href = '/cargos/sea/new'}>
           <Plus className="h-4 w-4 mr-2" />
           Add Sea Cargo
         </Button>

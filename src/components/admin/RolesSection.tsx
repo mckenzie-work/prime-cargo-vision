@@ -33,7 +33,7 @@ export function RolesSection() {
       {/* Roles Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Add Role Card */}
-        <Card className="border-2 border-dashed border-primary/30 hover:border-primary/50 transition-colors cursor-pointer">
+        <Card className="border-2 border-dashed border-primary/30 hover:border-primary/50 transition-colors cursor-pointer" onClick={() => window.location.href = '/my-admins/roles/new'}>
           <CardContent className="flex flex-col items-center justify-center h-48 p-6">
             <div className="rounded-full bg-primary/10 p-4 mb-4">
               <Plus className="h-8 w-8 text-primary" />

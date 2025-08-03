@@ -67,7 +67,23 @@ const App = () => (
             }
           />
           <Route
+            path="/goods/china"
+            element={
+              <AppLayout>
+                <ChinaWarehouse />
+              </AppLayout>
+            }
+          />
+          <Route
             path="/goods-received/ghana"
+            element={
+              <AppLayout>
+                <GhanaWarehouse />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/goods/ghana"
             element={
               <AppLayout>
                 <GhanaWarehouse />

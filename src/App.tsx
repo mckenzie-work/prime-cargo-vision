@@ -15,6 +15,9 @@ import Claims from "./pages/Claims";
 import Admins from "./pages/Admins";
 import Settings from "./pages/Settings";
 import ShippingRates from "./pages/ShippingRates";
+import ProfileSettings from "./pages/ProfileSettings";
+import Notifications from "./pages/Notifications";
+import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -119,6 +122,30 @@ const App = () => (
             element={
               <AppLayout>
                 <ShippingRates />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <AppLayout>
+                <ProfileSettings />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <AppLayout>
+                <Notifications />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/support"
+            element={
+              <AppLayout>
+                <Support />
               </AppLayout>
             }
           />

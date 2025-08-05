@@ -39,7 +39,7 @@ export function AppHeader({ sidebarCollapsed, onToggle }: AppHeaderProps) {
         {/* Actions */}
         <div className="flex items-center space-x-4">
           {/* Notifications */}
-          <Button variant="ghost" size="sm" className="relative">
+          <Button variant="ghost" size="sm" className="relative" onClick={() => window.location.href = '/notifications'}>
             <Bell className="h-4 w-4" />
             <span className="absolute -top-1 -right-1 h-2 w-2 bg-primary rounded-full"></span>
           </Button>
@@ -61,9 +61,9 @@ export function AppHeader({ sidebarCollapsed, onToggle }: AppHeaderProps) {
             <DropdownMenuContent align="end" className="w-56">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile Settings</DropdownMenuItem>
-              <DropdownMenuItem>Notifications</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => window.location.href = '/profile'}>Profile Settings</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => window.location.href = '/notifications'}>Notifications</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => window.location.href = '/support'}>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="text-destructive">Sign Out</DropdownMenuItem>
             </DropdownMenuContent>

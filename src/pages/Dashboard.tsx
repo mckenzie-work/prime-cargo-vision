@@ -6,12 +6,15 @@ import {
   Ship, 
   Plane,
   TrendingUp,
-  Calendar
+  Calendar,
+  Plus
 } from "lucide-react";
 import { MetricCard } from "@/components/ui/metric-card";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { NewShipmentDialog } from "@/components/dialogs/NewShipmentDialog";
 
 const transitingCargo = [
   {
@@ -51,6 +54,8 @@ const recentClients = [
 ];
 
 export default function Dashboard() {
+  const [showNewShipmentDialog, setShowNewShipmentDialog] = useState(false);
+
   return (
     <div className="space-y-6">
       {/* Page Header */}
@@ -66,12 +71,10 @@ export default function Dashboard() {
             <Calendar className="h-4 w-4 mr-2" />
             Last 30 days
           </Button>
-          <Link to="/cargos/sea">
-            <Button size="sm">
-              <Package className="h-4 w-4 mr-2" />
-              New Shipment
-            </Button>
-          </Link>
+          <Button size="sm" onClick={() => setShowNewShipmentDialog(true)}>
+            <Plus className="h-4 w-4 mr-2" />
+            New Shipment
+          </Button>
         </div>
       </div>
 
@@ -228,6 +231,11 @@ export default function Dashboard() {
           </div>
         </Link>
       </div>
+
+      <NewShipmentDialog 
+        open={showNewShipmentDialog} 
+        onOpenChange={setShowNewShipmentDialog} 
+      />
     </div>
   );
 }
